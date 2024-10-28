@@ -10,9 +10,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const navLinks = ['Home', 'Experiences and Expressions', 'Contact'];
     console.log('Navigation Links:', navLinks);
 
-    function calculateTotalItems(favoriteItemsCount, additionalItems) {
-        return favoriteItemsCount + additionalItems;
-    }
     const userProfile = {
         username: 'Ollie',
         email: 'loganllama15@gmail.com',
@@ -21,37 +18,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
         favoriteItems: ['Painting', 'Drawing', 'Writing', 'Poetry'],
     };
     console.log('User Profile:', userProfile);
- 
+
     const profilePictureElement = document.getElementById('profilePicture');
     if (profilePictureElement) {
         profilePictureElement.src = userProfile.profilePicture;
-        const totalFavoriteItems = userProfile.favoriteItems.length;
-        const additionalItems = 5;
-    
-        // Call the custom function with multiple arguments
-        const totalItems = calculateTotalItems(totalFavoriteItems, additionalItems);
-    
-        console.log('Total Items:', totalItems); // Returns and logs the result
-    
-        // Display the result on the page
-        const totalItemsElement = document.createElement('p');
-        totalItemsElement.id = 'totalItems';
-        totalItemsElement.textContent = `Total Items: ${totalItems}`;
-        document.body.appendChild(totalItemsElement);
-
-    }
-    if (profilePictureElement) {
-        // Add the onmouseover event safely
-        profilePictureElement.addEventListener('mouseover', () => {
-            profilePictureElement.style.border = '2px solid blue'; // Example action
-        });
-
-        // Optional: add an onmouseout event to remove the border when mouse leaves
-        profilePictureElement.addEventListener('mouseout', () => {
-            profilePictureElement.style.border = ''; // Removes the border
-        });
-    } else {
-        console.error('Element with ID "profilePicture" not found.');
     }
 
     const usernameElement = document.getElementById('username');
@@ -69,27 +39,27 @@ document.addEventListener('DOMContentLoaded', (event) => {
         favoriteItemsElement.textContent = `Favorite Items: ${userProfile.favoriteItems.join(', ')}`;
     }
 
-     console.log('User Profile:', userProfile);
-     const totalFavoriteItems = userProfile.favoriteItems.length;
-     const additionalItems = 5;
-     const totalItems = totalFavoriteItems + additionalItems;
+    console.log('User Profile:', userProfile);
+    const totalFavoriteItems = userProfile.favoriteItems.length;
+    const additionalItems = 5;
+    const totalItems = totalFavoriteItems + additionalItems;
 
-     const totalItemsElement = document.createElement('p');
-     totalItemsElement.id = 'totalItems';
-     totalItemsElement.textContent = `Total Items: ${totalItems}`;
-     document.body.appendChild(totalItemsElement);
+    const totalItemsElement = document.createElement('p');
+    totalItemsElement.id = 'totalItems';
+    totalItemsElement.textContent = `Total Items: ${totalItems}`;
+    document.body.appendChild(totalItemsElement);
 
-     const averageFavoriteItems = totalItems / 2; // Example divisor
-     console.log('Average Favorite Items:', averageFavoriteItems);
+    const averageFavoriteItems = totalItems / 2; // Example divisor
+    console.log('Average Favorite Items:', averageFavoriteItems);
 
-     const averageItemsElement = document.createElement('p');
-     averageItemsElement.id = 'averageItems';
-     averageItemsElement.textContent = `Average favorite items: ${averageFavoriteItems}`;
-     document.body.appendChild(averageItemsElement);
+    const averageItemsElement = document.createElement('p');
+    averageItemsElement.id = 'averageItems';
+    averageItemsElement.textContent = `Average favorite items: ${averageFavoriteItems}`;
+    document.body.appendChild(averageItemsElement);
 
     // Handle profile button and dropdown
-     const profileButton = document.getElementById('profileButton');
-     const profileDropdown = document.getElementById('profileDropdown');
+    const profileButton = document.getElementById('profileButton');
+    const profileDropdown = document.getElementById('profileDropdown');
 
     if (profileButton && profileDropdown) {
         profileButton.addEventListener('click', () => {
@@ -137,6 +107,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     //             img.style.maxWidth = "80%"; // Adjust as needed
     //         }
     //     });
+
         // New JavaScript for gallery thumbnails
         const thumbnails = document.querySelectorAll('.thumbnail img');
         const mainImage = document.getElementById('mainImage');
@@ -160,5 +131,4 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
      // Setup each gallery by calling the function with appropriate selectors
      setupGallery('mainImage1', '.gallery-container:nth-of-type(1) .thumbnail img');
-     
-});
+    });
