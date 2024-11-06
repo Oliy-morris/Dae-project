@@ -31,13 +31,12 @@ class UserProfile {
 
 
 
-    
+
     // Method to calculate total favorite items
     calculateTotalItems(additionalItems) {
         return this.favoriteItems.length + additionalItems;
     }
 }
-
 // UserManager module definition
 const UserManager = (() => {
     const users = [];
