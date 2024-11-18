@@ -258,3 +258,43 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }, 3000); // Timeout for 3 seconds
 });
 
+// Blog Logic
+const posts = [
+    { title: "My First Blog Post", content: "Welcome to my blog!", date: "2024-11-18" },
+    { title: "Another Day", content: "Reflections on creativity.", date: "2024-11-19" },
+];
+
+const blogContainer = document.getElementById('blog-container');
+if (blogContainer) {
+    posts.forEach(post => {
+        const postDiv = document.createElement('div');
+        postDiv.classList.add('blog-post');
+        postDiv.innerHTML = `
+            <h2>${post.title}</h2>
+            <p><small>${post.date}</small></p>
+            <p>${post.content}</p>
+        `;
+        blogContainer.appendChild(postDiv);
+    });
+ // Blog Logic
+const posts = [
+    { title: "My First Blog Post", content: "Welcome to my blog!", date: "2024-11-18" },
+    { title: "Another Day", content: "Reflections on creativity.", date: "2024-11-19" },
+];
+
+const blogContainer = document.getElementById('blog-container');
+if (blogContainer) {
+    posts.forEach(post => {
+        const postDiv = document.createElement('div');
+        postDiv.classList.add('blog-post');
+        postDiv.innerHTML = `
+            <h2>${post.title}</h2>
+            <p><small>${post.date}</small></p>
+            <p>${post.content}</p>
+        `;
+        blogContainer.appendChild(postDiv);
+    });
+} else {
+    console.error('Blog container element with ID "blog-container" not found.');
+}
+}
