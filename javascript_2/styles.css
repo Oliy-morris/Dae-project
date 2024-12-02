@@ -50,11 +50,13 @@ nav ul {
 
 nav ul li {
     margin: 0 15px;
+    border: 1px solid red; /* Debugging border for <li> */
 }
 
 nav a {
     color: white;
     text-decoration: none;
+    border: 1px solid blue; /* Debugging border for <a> */
 }
 
 nav ul li a:hover {

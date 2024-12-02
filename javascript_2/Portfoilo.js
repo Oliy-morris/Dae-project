@@ -30,8 +30,6 @@ class UserProfile {
     }
 
 
-
-
     // Method to calculate total favorite items
     calculateTotalItems(additionalItems) {
         return this.favoriteItems.length + additionalItems;
