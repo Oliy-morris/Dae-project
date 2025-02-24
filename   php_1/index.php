@@ -30,9 +30,15 @@ $selectedArtwork = "example painting"; // Select an artwork from the array
 $quantity = 2; // Quantity purchased
 $discount = 15; // Discount percentage
 
-// Calculate the total cost
-$basePrice = $artworks[$selectedArtwork]; // Access artwork price from the array
-$totalCost = calculateTotalCost($basePrice, $quantity, $discount);
+// Validate the selected artwork key before accessing it
+if (isset($artworks[$selectedArtwork])) {
+    $basePrice = $artworks[$selectedArtwork]; // Access artwork price from the array
+    $totalCost = calculateTotalCost($basePrice, $quantity, $discount);
+} else {
+    echo "Error: Artwork '" . htmlspecialchars($selectedArtwork) . "' not found.<br>";
+    $basePrice = 0;
+    $totalCost = 0;
+}
 
 // Output personal details
 echo "Name: " . $name . "<br>";
@@ -42,11 +48,9 @@ echo "<hr>";
 
 // Output artwork details
 echo "<h2>Art Sale Details</h2>";
-echo "Artwork: " . $selectedArtwork . "<br>";
+echo "Artwork: " . htmlspecialchars($selectedArtwork) . "<br>";
 echo "Base Price: $" . number_format($basePrice, 2) . "<br>";
 echo "Quantity: " . $quantity . "<br>";
 echo "Discount: " . $discount . "%<br>";
 echo "Total Cost: $" . number_format($totalCost, 2) . "<br>";
 ?>
-
-
