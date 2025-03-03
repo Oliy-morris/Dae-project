@@ -10,10 +10,13 @@ $isArtist = true;
 
 // One-dimensional array to store artwork details
 $artworks = [
-    "Abstract Sunset example" => 150.00,
-    "Blue Horizon example" => 200.00,
-    "Golden Reflection example" => 250.00
+    "abstract sunset example" => 150.00,
+    "blue horizon example" => 200.00,
+    "golden reflection example" => 250.00
 ];
+
+// Convert artwork keys to lowercase for case-insensitive lookup
+$artworks = array_change_key_case($artworks, CASE_LOWER);
 
 // Custom function to calculate the total cost of an artwork purchase
 function calculateTotalCost($basePrice, $quantity, $discount = 0) {
@@ -26,13 +29,26 @@ function calculateTotalCost($basePrice, $quantity, $discount = 0) {
 }
 
 // Example: Purchase details
-$selectedArtwork = "example painting"; // Select an artwork from the array
+$selectedArtwork = "abstract sunset example"; // Case-insensitive selection
 $quantity = 2; // Quantity purchased
 $discount = 15; // Discount percentage
 
-// Validate the selected artwork key before accessing it
-if (isset($artworks[$selectedArtwork])) {
-    $basePrice = $artworks[$selectedArtwork]; // Access artwork price from the array
+// Convert selected artwork to lowercase for comparison
+$selectedArtworkKey = strtolower($selectedArtwork);
+
+// Check if artwork list is not empty
+if (empty($artworks)) {
+    echo "Error: No artworks available.<br>";
+    exit;
+}
+// Debugging output
+echo "Selected Artwork (original): " . htmlspecialchars($selectedArtwork) . "<br>";
+echo "Selected Artwork (key, lowercase): " . htmlspecialchars($selectedArtworkKey) . "<br>"; // Now it's correctly defined
+echo "Available keys: " . implode(", ", array_keys($artworks)) . "<br>";
+
+// Ensure the selected artwork exists in the array
+if (array_key_exists($selectedArtworkKey, $artworks)) {
+    $basePrice = $artworks[$selectedArtworkKey]; // Access artwork price from the array
     $totalCost = calculateTotalCost($basePrice, $quantity, $discount);
 } else {
     echo "Error: Artwork '" . htmlspecialchars($selectedArtwork) . "' not found.<br>";
@@ -41,7 +57,7 @@ if (isset($artworks[$selectedArtwork])) {
 }
 
 // Output personal details
-echo "Name: " . $name . "<br>";
+echo "Name: " . htmlspecialchars($name) . "<br>";
 echo "Age: " . $age . "<br>";
 echo "Is an artist: " . ($isArtist ? "Yes" : "No") . "<br>";
 echo "<hr>";
