@@ -80,9 +80,9 @@ echo "<hr>";
 
 // Database credentials
 $servername = "localhost";    // or your database server
-$username = "your_username";   // <-- REPLACE with your DB username
-$password = "your_password";   // <-- REPLACE with your DB password
-$dbname = "your_database";     // <-- REPLACE with your DB name
+$username = "root";   // <-- REPLACE with your DB username
+$password = "root";   // <-- REPLACE with your DB password
+$dbname = "Paint";     // <-- REPLACE with your DB name
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -94,7 +94,7 @@ if ($conn->connect_error) {
 echo "Database connected successfully.<br>";
 
 // --- Insert data (example) ---
-$stmt = $conn->prepare("INSERT INTO users (name, email) VALUES (?, ?)");
+$stmt = $conn->prepare("INSERT INTO Drawings (ArtistID, Names, Age, Pricing, fox_id) VALUES (1,will salem,24 18,340 400 100 )");
 $stmt->bind_param("ss", $db_name, $db_email);
 
 $db_name = $name;                         // Using your personal $name
