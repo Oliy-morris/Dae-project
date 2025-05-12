@@ -1,0 +1,45 @@
+.blog-container {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 20px;
+  }
+  
+  .blog-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+  
+  .blog-form input,
+  .blog-form textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  
+  .blog-form button {
+    background-color: #2b7a78;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .blog-form button:hover {
+    background-color: #205b58;
+  }
+  
+  .post-card {
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+  }
+  
+  .post-card button {
+    margin-right: 10px;
+  }
+  
