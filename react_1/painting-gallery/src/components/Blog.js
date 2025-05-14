@@ -1,10 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Blog.css';
 
 export default function Blog() {
   const [posts, setPosts] = useState([]);
   const [formData, setFormData] = useState({ title: '', content: '' });
   const [editingIndex, setEditingIndex] = useState(null);
+
+  // ✅ Load saved blog posts on first render
+  useEffect(() => {
+    const savedPosts = localStorage.getItem('blogPosts');
+    if (savedPosts) {
+      setPosts(JSON.parse(savedPosts));
+    }
+  }, []);
+
+  // ✅ Save blog posts to localStorage whenever posts change
+  useEffect(() => {
+    localStorage.setItem('blogPosts', JSON.stringify(posts));
+  }, [posts]);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
