@@ -9,16 +9,21 @@ export default function PaintingCard({ title, artist, price, image }) {
     return () => clearInterval(timer);
   }, []);
 
+  const handleLike = () => alert('Liked!');
+  const handleSave = () => alert('Saved for later!');
+  const handleBuy = () => alert('Buying now!');
+
   return (
-    <div className="card">
-      <img src={image} alt={title} />
+    <div className="card-grid">
+      {}
+      <img src={image} alt={`Painting titled ${title}`} />
       <h3>{title}</h3>
       <p>Artist: {artist}</p>
       <p>Price: ${price}</p>
       <p>Viewing for: {viewTime}s</p>
-      <button onClick={() => alert('Liked!')}>❤️ Like</button>
-      <button onClick={() => alert('Saved for later!')}>💾 Save</button>
-      <button onClick={() => alert('Buying now!')}>🛒 Buy</button>
+      <button onClick={handleLike} aria-label="Like this painting">❤️ Like</button>
+      <button onClick={handleSave} aria-label="Save this painting">💾 Save</button>
+      <button onClick={handleBuy} aria-label="Buy this painting">🛒 Buy</button>
     </div>
   );
 }

@@ -5,14 +5,15 @@ const paintings = [
   {
     id: 1,
     title: 'Sunset Bliss',
-    artist: 'Claude Monet',
+    artist: 'Oliver M-Kaelin',
     price: 120,
-    image: '/images/Painting-1.jpg' // must exist in public/images/
+    image: '/images/ ' // must exist in public/images/
   },
+
   {
     id: 2,
     title: 'Mountain Dream',
-    artist: 'Vincent Van Gogh',
+    artist: 'Oliver M-Kaelin',
     price: 95,
     image: '/images/Legos.jpg' // must exist in public/images/
   }
