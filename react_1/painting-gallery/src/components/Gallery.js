@@ -33,7 +33,7 @@ export default function PaintingCards () {
     },
     {
       id: 5,
-      title: 'last dawn',
+      title: 'night time',
       artist: 'Oliver M-Kaelin',
       price: 200,
       image: '/images/night-time.jpg', 
@@ -45,23 +45,43 @@ export default function PaintingCards () {
       price: 200,
       image: '/images/on-borrowed-time.jpg',
     },
-     
+    {
+      id: 7,
+      title: 'last dawn',
+      artist: 'Oliver M-Kaelin',
+      price: 280,
+      image: '/images/last dawn.jpg',
+    },
+    {
+      id: 8,
+      title: 'sorry-street',
+      artist: 'Oliver M-Kaelin',
+      price: 270,
+      image: '/images/sorry-street.jpg',
+    },
+
+
+
+
+
+
+
+
+
   ];
 
   return (
-    <div>
-      <h2>🎨 Painting Gallery</h2>
-      <div className="gallery">
-        {paintings.map((p) => (
-          <PaintingCard
-            key={p.id}
-            title={p.title}
-            artist={p.artist}
-            price={p.price}
-            image={p.image}
-          />
-        ))}
-      </div>
-    </div>
+<div className="painting-grid">
+  {paintings.map((painting) => (
+    <PaintingCard
+      key={painting.id}
+      title={painting.title}
+      artist={painting.artist}
+      price={painting.price}
+      image={painting.image}
+    />
+  ))}
+</div>
+
   );
 }

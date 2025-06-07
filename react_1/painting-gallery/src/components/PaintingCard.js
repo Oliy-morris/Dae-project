@@ -14,7 +14,7 @@ export default function PaintingCard({ title, artist, price, image }) {
   const handleBuy = () => alert('Buying now!');
 
   return (
-    <div className="card-grid">
+    <div className="card">
       {}
       <img src={image} alt={`Painting titled ${title}`} />
       <h3>{title}</h3>
